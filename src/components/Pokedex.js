@@ -28,10 +28,10 @@ const Pokedex = () => {
   }, []);
 
   return (
-    <div>
+    <div className="flex flex-wrap justify-center items-center">
       {allPokemon.map((actualPokemon, key) => {
         return (
-          <div key={key} id={actualPokemon.id.toString().padStart(3, "0")}>
+          <div key={key} id={actualPokemon.id.toString().padStart(3, "0")} className="text-center">
             <img
               src={actualPokemon.sprites.front_default}
               alt={actualPokemon.name}
