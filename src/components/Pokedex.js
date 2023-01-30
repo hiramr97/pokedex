@@ -28,19 +28,31 @@ const Pokedex = () => {
   }, []);
 
   return (
-      <div>
-        {allPokemon.map((actualPokemon, key) => {
-          return(
-            <div key={key} id={actualPokemon.id.toString().padStart(3, '0')}>
-              <img src={actualPokemon.sprites.front_default} alt={actualPokemon.name} title={actualPokemon.name.replace(/^./, (str) => str.toUpperCase())}/>
-              <p>#{actualPokemon.id.toString().padStart(3, '0')}</p>
-              <p>{actualPokemon.name.replace(/^./, (str) => str.toUpperCase())}</p>
-              <p>{actualPokemon.types[0].type.name.replace(/^./, (str) => str.toUpperCase())}</p>
-            </div>
-          )
-        })}
-      </div>
+    <div>
+      {allPokemon.map((actualPokemon, key) => {
+        return (
+          <div key={key} id={actualPokemon.id.toString().padStart(3, "0")}>
+            <img
+              src={actualPokemon.sprites.front_default}
+              alt={actualPokemon.name}
+              title={actualPokemon.name.replace(/^./, (str) =>
+                str.toUpperCase()
+              )}
+            />
+            <p>#{actualPokemon.id.toString().padStart(3, "0")}</p>
+            <p>
+              {actualPokemon.name.replace(/^./, (str) => str.toUpperCase())}
+            </p>
+            <p>
+              {actualPokemon.types[0].type.name.replace(/^./, (str) =>
+                str.toUpperCase()
+              )}
+            </p>
+          </div>
+        );
+      })}
+    </div>
   );
-}
+};
 
-export default Pokedex
+export default Pokedex;
