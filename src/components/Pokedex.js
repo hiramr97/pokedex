@@ -17,7 +17,7 @@ const Pokedex = () => {
         );
         const data = await res.json();
         setAllPokemon((currentList) => [...currentList, data]);
-        allPokemon.sort((a, b) => a.id - b.id);
+        allPokemon.sort();
       });
     }
     createPokemonObject(data.results);
@@ -28,10 +28,14 @@ const Pokedex = () => {
   }, []);
 
   return (
-    <div className="flex flex-wrap justify-center items-center">
+    <div className="flex flex-wrap justify-center items-center mx-auto">
       {allPokemon.map((actualPokemon, key) => {
         return (
-          <div key={key} id={actualPokemon.id.toString().padStart(3, "0")} className="text-center">
+          <div
+            key={key}
+            id={actualPokemon.id.toString().padStart(3, "0")}
+            className="text-center"
+          >
             <img
               src={actualPokemon.sprites.front_default}
               alt={actualPokemon.name}
