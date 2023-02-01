@@ -15,9 +15,7 @@ const Pokedex = () => {
 
     function createPokemonObject(results) {
       results.forEach(async (pokemon) => {
-        const res = await fetch(
-          pokemon.url
-        );
+        const res = await fetch(pokemon.url);
         const data = await res.json();
         setAllPokemon((currentList) => [...currentList, data]);
         allPokemon.sort((a, b) => a.id - b.id);
@@ -57,11 +55,13 @@ const Pokedex = () => {
                 {actualPokemon.name.replace(/^./, (str) => str.toUpperCase())}
               </p>
             </Link>
-            <p>
-              {actualPokemon.types[0].type.name.replace(/^./, (str) =>
-                str.toUpperCase()
-              )}
-            </p>
+            {actualPokemon.types.map((type, key) => {
+              return (
+                <p key={type.type.name}>
+                  {type.type.name.replace(/^./, (str) => str.toUpperCase())}
+                </p>
+              );
+            })}
           </div>
         );
       })}

@@ -22,7 +22,7 @@ const Pokemon = () => {
 
   if (loading === true) return;
 
-  console.log(pokemon.types);
+  console.log(pokemon);
 
   return (
     <div>
@@ -32,7 +32,6 @@ const Pokemon = () => {
       <p>National Dex No. {pokemon.id.toString().padStart(3, "0")}</p>
       <p>Base Exp. {pokemon.base_experience}</p>
       {pokemon.types.map((type, key) => {
-        console.log(type.type.name)
         return(
           <p key={type.type.name}>{type.type.name.replace(/^./, (str) => str.toUpperCase())}</p>
         )
