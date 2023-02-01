@@ -22,7 +22,7 @@ const Pokemon = () => {
 
   if (loading === true) return;
 
-  console.log(pokemon);
+  console.log(pokemon.abilities);
 
   return (
     <div>
@@ -30,25 +30,15 @@ const Pokemon = () => {
       <img src={pokemon.sprites.other["official-artwork"].front_shiny} />
       <p>{pokemon.name.replace(/^./, (str) => str.toUpperCase())}</p>
       <p>National Dex No. {pokemon.id.toString().padStart(3, "0")}</p>
-      <p>
-        {pokemon.abilities[0].ability.name.replace(/^./, (str) =>
-          str.toUpperCase()
-        )}
-      </p>
-      <p>
-        {pokemon.abilities[1].ability.name.replace(/^./, (str) =>
-          str.toUpperCase()
-        )}
-      </p>
-      <p>{pokemon.base_experience}</p>
+      <p>Base Exp. {pokemon.base_experience}</p>
       <p>
         {pokemon.types[0].type.name.replace(/^./, (str) => str.toUpperCase())}
       </p>
       <p>
         {pokemon.types[1].type.name.replace(/^./, (str) => str.toUpperCase())}
       </p>
-      <p>{Math.round(pokemon.weight * 0.22)} lbs</p>
-      <p>{Math.round(pokemon.height * 3.93)}"</p>
+      <p>Weight: {Math.round(pokemon.weight * 0.22)} lbs</p>
+      <p>Height: {Math.round(pokemon.height * 3.93)}"</p>
     </div>
   );
 };
