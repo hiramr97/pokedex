@@ -32,12 +32,29 @@ const Pokemon = () => {
       <p>National Dex No. {pokemon.id.toString().padStart(3, "0")}</p>
       <p>Base Exp. {pokemon.base_experience}</p>
       {pokemon.types.map((type, key) => {
-        return(
-          <p key={type.type.name}>{type.type.name.replace(/^./, (str) => str.toUpperCase())}</p>
-        )
+        return (
+          <p key={type.type.name}>
+            {type.type.name.replace(/^./, (str) => str.toUpperCase())}
+          </p>
+        );
       })}
       <p>Weight: {Math.round(pokemon.weight * 0.22)} lbs</p>
       <p>Height: {Math.round(pokemon.height * 3.93)}"</p>
+      {pokemon.abilities.map((ability, key) => {
+        if (ability.is_hidden === true) {
+          return (
+            <div className="flex" key={ability.ability.name}>
+              <p className="mr-2">{ability.ability.name.replace(/^./, (str) => str.toUpperCase())}</p>
+              <p> (Hidden Ability)</p>
+            </div>
+          );
+        }
+        return (
+          <p key={ability.ability.name}>
+            {ability.ability.name.replace(/^./, (str) => str.toUpperCase())}
+          </p>
+        );
+      })}
     </div>
   );
 };
