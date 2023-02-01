@@ -22,7 +22,7 @@ const Pokemon = () => {
 
   if (loading === true) return;
 
-  console.log(pokemon.abilities);
+  console.log(pokemon.types);
 
   return (
     <div>
@@ -31,12 +31,12 @@ const Pokemon = () => {
       <p>{pokemon.name.replace(/^./, (str) => str.toUpperCase())}</p>
       <p>National Dex No. {pokemon.id.toString().padStart(3, "0")}</p>
       <p>Base Exp. {pokemon.base_experience}</p>
-      <p>
-        {pokemon.types[0].type.name.replace(/^./, (str) => str.toUpperCase())}
-      </p>
-      <p>
-        {pokemon.types[1].type.name.replace(/^./, (str) => str.toUpperCase())}
-      </p>
+      {pokemon.types.map((type, key) => {
+        console.log(type.type.name)
+        return(
+          <p key={type.type.name}>{type.type.name.replace(/^./, (str) => str.toUpperCase())}</p>
+        )
+      })}
       <p>Weight: {Math.round(pokemon.weight * 0.22)} lbs</p>
       <p>Height: {Math.round(pokemon.height * 3.93)}"</p>
     </div>
