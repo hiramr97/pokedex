@@ -18,10 +18,10 @@ const Pokedex = () => {
         const res = await fetch(pokemon.url);
         const data = await res.json();
         setAllPokemon((currentList) => [...currentList, data]);
-        allPokemon.sort((a, b) => a.id - b.id);
       });
     }
     createPokemonObject(data.results);
+    allPokemon.sort((a, b) => a.id - b.id);
     setLoading(false);
   };
 
@@ -30,6 +30,8 @@ const Pokedex = () => {
   }, []);
 
   if (loading === true) return;
+
+  allPokemon.sort((a, b) => a.id - b.id)
 
   return (
     <div className="flex flex-wrap justify-center items-center mx-auto">

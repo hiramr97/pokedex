@@ -46,7 +46,9 @@ const Pokemon = () => {
         if (ability.is_hidden === true) {
           return (
             <div className="flex" key={ability.ability.name}>
-              <p className="mr-2">{ability.ability.name.replace(/^./, (str) => str.toUpperCase())}</p>
+              <p className="mr-2">
+                {ability.ability.name.replace(/^./, (str) => str.toUpperCase())}
+              </p>
               <p> (Hidden Ability)</p>
             </div>
           );
