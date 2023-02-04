@@ -26,8 +26,16 @@ const Pokemon = () => {
 
   return (
     <div>
-      <img src={pokemon.sprites.other["official-artwork"].front_default} />
-      <img src={pokemon.sprites.other["official-artwork"].front_shiny} />
+      <img
+        src={pokemon.sprites.other["official-artwork"].front_default}
+        title={pokemon.name.replace(/^./, (str) => str.toUpperCase())}
+        alt={pokemon.name}
+      />
+      <img
+        src={pokemon.sprites.other["official-artwork"].front_shiny}
+        title={pokemon.name.replace(/^./, (str) => str.toUpperCase())}
+        alt={pokemon.name}
+      />
       <p>{pokemon.name.replace(/^./, (str) => str.toUpperCase())}</p>
       <p>National Dex No. {pokemon.id.toString().padStart(3, "0")}</p>
       <p>Base Exp. {pokemon.base_experience}</p>
@@ -59,6 +67,20 @@ const Pokemon = () => {
           </p>
         );
       })}
+      <ol type="1">
+        {pokemon.moves.map((move, key) => {
+          for (let i = 0; i < move.version_group_details.length; i++) {
+            if (
+              move.version_group_details[i].version_group.name ===
+                "sword-shield" &&
+              move.version_group_details[i].move_learn_method.name ===
+                "level-up"
+            ) {
+              return <li key={move.move.name}>{move.move.name}</li>;
+            }
+          }
+        })}
+      </ol>
     </div>
   );
 };
