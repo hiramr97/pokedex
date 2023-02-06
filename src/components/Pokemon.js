@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PokemomStats from "./PokemonStats";
+import PokemomMoves from "./PokemonMoves";
 
 const Pokemon = () => {
   const [pokemon, setPokemon] = useState();
@@ -68,35 +69,7 @@ const Pokemon = () => {
           </p>
         );
       })}
-      <table>
-        <tbody>
-          <tr>
-            <th>Lv.</th>
-            <th>Move</th>
-          </tr>
-          {pokemon.moves.map((move, key) => {
-            for (let i = 0; i < move.version_group_details.length; i++) {
-              if (
-                move.version_group_details[i].version_group.name ===
-                  "sword-shield" &&
-                move.version_group_details[i].move_learn_method.name ===
-                  "level-up"
-              ) {
-                return (
-                  <tr key={move.move.name}>
-                    <td>{move.version_group_details[i].level_learned_at}</td>
-                    <td>
-                      {move.move.name
-                        .replace("-", " ")
-                        .replace(/^./, (str) => str.toUpperCase())}
-                    </td>
-                  </tr>
-                );
-              }
-            }
-          })}
-        </tbody>
-      </table>
+      <PokemomMoves pokemon={pokemon}/>
       <PokemomStats pokemon={pokemon}/>
     </div>
   );
