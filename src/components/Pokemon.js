@@ -69,8 +69,8 @@ const Pokemon = () => {
           </p>
         );
       })}
-      <PokemomMoves pokemon={pokemon}/>
-      <PokemomStats pokemon={pokemon}/>
+      <PokemomMoves moves={pokemon.moves}/>
+      <PokemomStats stats={pokemon.stats}/>
     </div>
   );
 };

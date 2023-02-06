@@ -1,4 +1,4 @@
-const PokemonMoves = (pokemon) => {
+const PokemonMoves = (moves) => {
   return (
     <table>
       <tbody>
@@ -6,7 +6,7 @@ const PokemonMoves = (pokemon) => {
           <th>Lv.</th>
           <th>Move</th>
         </tr>
-        {pokemon.pokemon.moves.map((move, key) => {
+        {moves.moves.map((move, key) => {
           for (let i = 0; i < move.version_group_details.length; i++) {
             if (
               move.version_group_details[i].version_group.name ===

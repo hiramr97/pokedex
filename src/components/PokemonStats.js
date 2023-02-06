@@ -1,13 +1,13 @@
-const PokemomStats = (pokemon) => {
-  console.log(pokemon);
+const PokemomStats = (stats) => {
+  console.log(stats.stats);
 
   return (
     <div>
       <h1>Base Stats</h1>
-      {pokemon.pokemon.stats.map((stat) => {
+      {stats.stats.map((stat) => {
         console.log(stat);
         return (
-          <p>
+          <p key={stat.stat.name}>
             {stat.stat.name} {stat.base_stat}
           </p>
         );
