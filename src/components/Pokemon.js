@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import PokemomStats from "./PokemonStats";
 
 const Pokemon = () => {
   const [pokemon, setPokemon] = useState();
@@ -96,12 +97,7 @@ const Pokemon = () => {
           })}
         </tbody>
       </table>
-      {/* <div>
-        <h1>Base Stats</h1>
-        {pokemon.stats.forEach((stat) => {
-          return <p>{stat.stat.name}</p>;
-        })}
-      </div> */}
+      <PokemomStats pokemon={pokemon}/>
     </div>
   );
 };
