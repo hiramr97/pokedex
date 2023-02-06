@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PokemomStats from "./PokemonStats";
-import PokemomMoves from "./PokemonMoves";
+import LevelUpMoves from "./PokemonMoves";
 
 const Pokemon = () => {
   const [pokemon, setPokemon] = useState();
@@ -69,7 +69,7 @@ const Pokemon = () => {
           </p>
         );
       })}
-      <PokemomMoves moves={pokemon.moves}/>
+      <LevelUpMoves moves={pokemon.moves}/>
       <PokemomStats stats={pokemon.stats}/>
     </div>
   );

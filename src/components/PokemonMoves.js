@@ -1,4 +1,4 @@
-const PokemonMoves = (moves) => {
+const LevelUpMoves = (moves) => {
   return (
     <table>
       <tbody>
@@ -10,7 +10,7 @@ const PokemonMoves = (moves) => {
           for (let i = 0; i < move.version_group_details.length; i++) {
             if (
               move.version_group_details[i].version_group.name ===
-                "sword-shield" &&
+                "scarlet-violet" &&
               move.version_group_details[i].move_learn_method.name ===
                 "level-up"
             ) {
@@ -32,4 +32,4 @@ const PokemonMoves = (moves) => {
   );
 };
 
-export default PokemonMoves;
+export default LevelUpMoves;
