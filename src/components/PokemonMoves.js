@@ -19,8 +19,8 @@ const PokemonMoves = (moves) => {
                   <td>{move.version_group_details[i].level_learned_at}</td>
                   <td>
                     {move.move.name
-                      .replace("-", " ")
-                      .replace(/^./, (str) => str.toUpperCase())}
+                      .replace(/(^\w|-\w)/g, (str) => str.toUpperCase())
+                      .replace("-", " ")}
                   </td>
                 </tr>
               );
