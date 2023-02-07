@@ -13,7 +13,6 @@ const Species = () => {
       .then((data) => {
         setSpecies(data.genera);
         setLoading(false);
-        console.log(species);
       });
   };
 
@@ -21,7 +20,6 @@ const Species = () => {
     getSpecies();
   }, []);
 
-  console.log(species);
   return (
     <div>
       <p>Species</p>

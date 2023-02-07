@@ -27,7 +27,7 @@ const Pokemon = () => {
   if (loading === true) return;
 
   return (
-    <div>
+    <div className="flex flex-wrap items-center mx-auto w-[80%]">
       <img
         src={pokemon.sprites.other["official-artwork"].front_default}
         title={pokemon.name.replace(/^./, (str) => str.toUpperCase())}
@@ -37,42 +37,48 @@ const Pokemon = () => {
         src={pokemon.sprites.other["official-artwork"].front_shiny}
         title={pokemon.name.replace(/^./, (str) => str.toUpperCase())}
         alt={pokemon.name}
+        className="hidden"
       />
-      <p>{pokemon.name.replace(/^./, (str) => str.toUpperCase())}</p>
-      <p>National Dex No. {pokemon.id.toString().padStart(3, "0")}</p>
-      <Species/>
-      <p>Type</p>
-      {pokemon.types.map((type, key) => {
-        return (
-          <p key={type.type.name}>
-            {type.type.name.replace(/^./, (str) => str.toUpperCase())}
-          </p>
-        );
-      })}
-      <p>Weight: {Math.round(pokemon.weight * 0.22)} lbs</p>
-      <p>Height: {Math.round(pokemon.height * 3.93)}"</p>
-      <p>Abilities</p>
-      {pokemon.abilities.map((ability, key) => {
-        if (ability.is_hidden === true) {
+      <div>
+        <h1 className="font-bold text-2xl">Pokémon Data</h1>
+        <p>{pokemon.name.replace(/^./, (str) => str.toUpperCase())}</p>
+        <p>National Dex No. {pokemon.id.toString().padStart(3, "0")}</p>
+        <Species />
+        <p>Type</p>
+        {pokemon.types.map((type, key) => {
           return (
-            <div className="flex" key={ability.ability.name}>
-              <p className="mr-2">
-                {ability.ability.name.replace(/^./, (str) => str.toUpperCase())}
-              </p>
-              <p> (Hidden Ability)</p>
-            </div>
+            <p key={type.type.name}>
+              {type.type.name.replace(/^./, (str) => str.toUpperCase())}
+            </p>
           );
-        }
-        return (
-          <p key={ability.ability.name}>
-            {ability.ability.name.replace(/^./, (str) => str.toUpperCase())}
-          </p>
-        );
-      })}
-      <p>Base Exp. {pokemon.base_experience}</p>
-      <Description/>
-      <LevelUpMoves moves={pokemon.moves} />
+        })}
+        <p>Weight: {Math.round(pokemon.weight * 0.22)} lbs</p>
+        <p>Height: {Math.round(pokemon.height * 3.93)}"</p>
+        <p>Abilities</p>
+        {pokemon.abilities.map((ability, key) => {
+          if (ability.is_hidden === true) {
+            return (
+              <div className="flex" key={ability.ability.name}>
+                <p className="mr-2">
+                  {ability.ability.name.replace(/^./, (str) =>
+                    str.toUpperCase()
+                  )}
+                </p>
+                <p> (Hidden Ability)</p>
+              </div>
+            );
+          }
+          return (
+            <p key={ability.ability.name}>
+              {ability.ability.name.replace(/^./, (str) => str.toUpperCase())}
+            </p>
+          );
+        })}
+        <p>Base Exp. {pokemon.base_experience}</p>
+      </div>
       <PokemomStats stats={pokemon.stats} />
+      <Description />
+      <LevelUpMoves moves={pokemon.moves} />
     </div>
   );
 };

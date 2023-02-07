@@ -1,7 +1,7 @@
 const PokemomStats = (stats) => {
   return (
     <div>
-      <h1>Base Stats</h1>
+      <h1 className="font-bold text-2xl">Base Stats</h1>
       {stats.stats.map((stat) => {
         if (stat.stat.name === "hp") {
           return (
@@ -40,6 +40,8 @@ const PokemomStats = (stats) => {
           </div>
         );
       })}
+      <p>BST</p>
+      <p>{stats.stats[0].base_stat + stats.stats[1].base_stat + stats.stats[2].base_stat + stats.stats[3].base_stat + stats.stats[4].base_stat + stats.stats[5].base_stat}</p>
     </div>
   );
 };
