@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import PokemomStats from "./PokemonStats";
 import LevelUpMoves from "./PokemonMoves";
+import Description from "./Description";
 
 const Pokemon = () => {
   const [pokemon, setPokemon] = useState();
@@ -69,6 +70,7 @@ const Pokemon = () => {
           </p>
         );
       })}
+      <Description pokemon={pokemon} loading={loading.loading}/>
       <LevelUpMoves moves={pokemon.moves}/>
       <PokemomStats stats={pokemon.stats}/>
     </div>

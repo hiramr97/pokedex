@@ -10,7 +10,7 @@ const LevelUpMoves = (moves) => {
           for (let i = 0; i < move.version_group_details.length; i++) {
             if (
               move.version_group_details[i].version_group.name ===
-                "scarlet-violet" &&
+                "sword-shield" &&
               move.version_group_details[i].move_learn_method.name ===
                 "level-up"
             ) {
