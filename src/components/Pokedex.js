@@ -31,7 +31,7 @@ const Pokedex = () => {
 
   if (loading === true) return;
 
-  allPokemon.sort((a, b) => a.id - b.id)
+  allPokemon.sort((a, b) => a.id - b.id);
 
   return (
     <div className="flex flex-wrap justify-center items-center mx-auto">

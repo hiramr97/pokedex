@@ -25,8 +25,6 @@ const Pokemon = () => {
 
   if (loading === true) return;
 
-  console.log(pokemon);
-
   return (
     <div>
       <img
@@ -70,9 +68,9 @@ const Pokemon = () => {
           </p>
         );
       })}
-      <Description pokemon={pokemon} loading={loading.loading}/>
-      <LevelUpMoves moves={pokemon.moves}/>
-      <PokemomStats stats={pokemon.stats}/>
+      <Description/>
+      <LevelUpMoves moves={pokemon.moves} />
+      <PokemomStats stats={pokemon.stats} />
     </div>
   );
 };
