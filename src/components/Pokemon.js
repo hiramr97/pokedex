@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import PokemomStats from "./PokemonStats";
 import LevelUpMoves from "./PokemonMoves";
 import Description from "./Description";
+import Species from "./Species";
 
 const Pokemon = () => {
   const [pokemon, setPokemon] = useState();
@@ -39,7 +40,7 @@ const Pokemon = () => {
       />
       <p>{pokemon.name.replace(/^./, (str) => str.toUpperCase())}</p>
       <p>National Dex No. {pokemon.id.toString().padStart(3, "0")}</p>
-      <p>Base Exp. {pokemon.base_experience}</p>
+      <Species/>
       <p>Type</p>
       {pokemon.types.map((type, key) => {
         return (
@@ -68,6 +69,7 @@ const Pokemon = () => {
           </p>
         );
       })}
+      <p>Base Exp. {pokemon.base_experience}</p>
       <Description/>
       <LevelUpMoves moves={pokemon.moves} />
       <PokemomStats stats={pokemon.stats} />
