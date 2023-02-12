@@ -21,7 +21,7 @@ const Description = () => {
   }, []);
 
   return (
-    <div>
+    <div className="w-full">
       <h1 className="font-bold text-2xl">Pokédex Entries</h1>
       {description.map((text) => {
         if (text.language.name === "en") {

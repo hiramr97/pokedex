@@ -77,8 +77,8 @@ const Pokemon = () => {
         <p>Base Exp. {pokemon.base_experience}</p>
       </div>
       <PokemomStats stats={pokemon.stats} />
-      <Description />
       <LevelUpMoves moves={pokemon.moves} />
+      <Description />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 const LevelUpMoves = (moves) => {
   return (
-    <table>
+    <table className="">
       <tbody>
         <tr>
           <th>Lv.</th>
