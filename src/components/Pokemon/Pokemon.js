@@ -5,6 +5,27 @@ import LevelUpMoves from "./PokemonMoves";
 import Description from "./Description";
 import Species from "./Species";
 
+const TYPE_COLORS = {
+  bug: 'B1C12E',
+  dark: '4F3A2D',
+  dragon: '755EDF',
+  electric: 'FCBC17',
+  fairy: 'F4B1F4',
+  fighting: '823551D',
+  fire: 'E73B0C',
+  flying: 'A3B3F7',
+  ghost: '6060B2',
+  grass: '74C236',
+  ground: 'D3B357',
+  ice: 'A3E7FD',
+  normal: 'C8C4BC',
+  poison: '934594',
+  psychic: 'ED4882',
+  rock: 'B9A156',
+  steel: 'B5B5C3',
+  water: '3295F6'
+};
+
 const Pokemon = () => {
   const [pokemon, setPokemon] = useState();
   const [loading, setLoading] = useState(true);
@@ -47,7 +68,7 @@ const Pokemon = () => {
         <p>Type</p>
         {pokemon.types.map((type, key) => {
           return (
-            <p key={type.type.name}>
+            <p key={type.type.name} style={{ color: `#${TYPE_COLORS[type.type.name]}` }}>
               {type.type.name.replace(/^./, (str) => str.toUpperCase())}
             </p>
           );
