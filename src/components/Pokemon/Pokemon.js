@@ -48,7 +48,7 @@ const Pokemon = () => {
   if (loading === true) return;
 
   return (
-    <div className="flex flex-wrap items-center mx-auto w-[80%]">
+    <div className="flex flex-wrap items-center mx-auto w-[80%] shadow-lg shadow-black rounded-md bg-white">
       <img
         src={pokemon.sprites.other["official-artwork"].front_default}
         title={pokemon.name.replace(/^./, (str) => str.toUpperCase())}

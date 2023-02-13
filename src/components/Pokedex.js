@@ -55,7 +55,7 @@ const Pokedex = () => {
   allPokemon.sort((a, b) => a.id - b.id);
 
   return (
-    <div className="flex flex-wrap justify-evenly text-center mx-auto w-[80%] shadow-lg rounded-md bg-white">
+    <div className="flex flex-wrap justify-evenly text-center mx-auto w-[80%] shadow-lg shadow-black rounded-md bg-white">
       {allPokemon.map((actualPokemon, key) => {
         return (
           <div
