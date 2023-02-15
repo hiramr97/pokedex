@@ -67,9 +67,7 @@ const Pokedex = () => {
               <img
                 src={actualPokemon.sprites.front_default}
                 alt={actualPokemon.name}
-                title={actualPokemon.name.replace(/^./, (str) =>
-                  str.toUpperCase()
-                )}
+                title={actualPokemon.name.replace(/(^\w|-\w)/g, (str) => str.toUpperCase())}
                 className="mx-auto"
               />
             </Link>
