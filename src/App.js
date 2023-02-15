@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Pokedex from "./components/Pokedex";
 import Pokemon from "./components/Pokemon/Pokemon";
 import Kanto from "./components/Pokedex/Kanto"
+import Footer from "./components/Footer";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false)
@@ -18,6 +19,7 @@ function App() {
         <Route path="/kanto" element={<Kanto/>}/>
         <Route path="/pokedex/:id" element={<Pokemon />} />
       </Routes>
+      <Footer/>
     </div>
   );
 }
