@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { AiOutlineCaretUp, AiOutlineCaretDown } from 'react-icons/ai'
+import { Link } from "react-router-dom"
 
-const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false)
+const Navbar = ({isOpen, setIsOpen}) => {
 
     return (
         <nav className="bg-gray-700 w-[80%] mx-auto rounded-md mb-5 text-white shadow-md shadow-slate-900">
@@ -17,9 +17,9 @@ const Navbar = () => {
                     </button>
                     {isOpen && (
                         <div className="bg-gray-700 absolute top-12 flex flex-col justify-center items-center text-center rounded-md shadow-md shadow-slate-900 text-white">
-                            <div className="">
-                                <p className="hover:bg-gray-500 px-4 py-2 cursor-pointer rounded-t-md">National</p>
-                                <p className="hover:bg-gray-500 px-4 py-2 cursor-pointer">Kanto</p>
+                            <div onClick={() => setIsOpen((prev) => !prev)} className="">
+                                <Link to={'/'}><p className="hover:bg-gray-500 px-4 py-2 cursor-pointer rounded-t-md">National</p></Link>
+                                <Link to={'/kanto'}><p className="hover:bg-gray-500 px-4 py-2 cursor-pointer">Kanto</p></Link>
                                 <p className="hover:bg-gray-500 px-4 py-2 cursor-pointer">Johto</p>
                                 <p className="hover:bg-gray-500 px-4 py-2 cursor-pointer">Hoenn</p>
                                 <p className="hover:bg-gray-500 px-4 py-2 cursor-pointer">Sinnoh</p>
