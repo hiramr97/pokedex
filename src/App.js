@@ -8,15 +8,12 @@ import Kanto from "./components/Pokedex/Kanto"
 import Footer from "./components/Footer";
 
 function App() {
-  const [isOpen, setIsOpen] = useState(false)
-
   return (
     <div className="bg-teal-900 h-full min-h-screen">
       <Header/>
-      <Navbar isOpen={isOpen} setIsOpen={setIsOpen}/>
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Pokedex />} />
-        <Route path="/kanto" element={<Kanto/>}/>
         <Route path="/pokedex/:id" element={<Pokemon />} />
       </Routes>
       <Footer/>

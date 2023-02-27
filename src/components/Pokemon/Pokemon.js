@@ -62,7 +62,7 @@ const Pokemon = () => {
       />
       <div>
         <h1 className="font-bold text-2xl">Pokémon Data</h1>
-        <p>{pokemon.name.replace(/^./, (str) => str.toUpperCase())}</p>
+        <p>{pokemon.name.replace(/(^\w|-\w)/g, (str) => str.toUpperCase())}</p>
         <p>National Dex No. {pokemon.id.toString().padStart(3, "0")}</p>
         <Species />
         <p>Type</p>
