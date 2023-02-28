@@ -21,14 +21,14 @@ const Species = () => {
   }, []);
 
   return (
-    <div>
-      <p>Species</p>
+    <tr>
+      <th>Species</th>
       {species.map((word) => {
         if (word.language.name === "en") {
-          return <p key={word.genus}>{word.genus}</p>;
+          return <span key={word.genus}>{word.genus}</span>;
         }
       })}
-    </div>
+    </tr>
   );
 };
 

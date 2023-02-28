@@ -1,6 +1,6 @@
 const PokemomStats = (stats) => {
   return (
-    <div className="w-full">
+    <div className="px-10 w-full">
       <h1 className="font-bold text-2xl">Base Stats</h1>
       {stats.stats.map((stat) => {
         if (stat.stat.name === "hp") {

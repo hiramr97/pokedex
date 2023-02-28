@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 const Navbar = ({ isOpen, setIsOpen }) => {
   return (
     <nav className="bg-gray-700 w-[80%] mx-auto rounded-md mb-5 text-white shadow-md shadow-slate-900">
-      <div className="flex justify-between mx-10 py-2 text-lg">
+      <div className="flex justify-evenly py-2 text-lg">
         <Link to={'/'}>Pokedex</Link>
-        <button className="-ml-4">Moves</button>
-        <button>Types</button>
-        <button>Abilities</button>
+        <Link to={'/'}>Abilities</Link>
+        <Link to={'/'}>Moves</Link>
+        <Link to={'/'}>Types</Link>
         <form className="flex items-center relative">
           <input
             className="rounded-md px-2 text-md"
