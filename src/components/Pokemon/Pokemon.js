@@ -65,11 +65,11 @@ const Pokemon = () => {
         <table>
           <tbody>
             <tr>
-              <th>National Dex No.</th>
+              <th className="text-right pr-2">National Dex No.</th>
               <td>{pokemon.id.toString().padStart(3, "0")}</td>
             </tr>
             <tr>
-              <th>Type</th>
+              <th className="text-right pr-2">Type</th>
               <td>
                 {pokemon.types.map((type, key) => {
                   return (
@@ -86,15 +86,15 @@ const Pokemon = () => {
             </tr>
             <Species />
             <tr>
-              <th>Weight</th>
+              <th className="text-right pr-2">Weight</th>
               <td>{Math.round(pokemon.weight * 0.22)} lbs</td>
             </tr>
             <tr>
-              <th>Height</th>
+              <th className="text-right pr-2">Height</th>
               <td>{Math.round(pokemon.height * 3.93)}"</td>
             </tr>
             <tr>
-              <th>Abilities</th>
+              <th className="text-right pr-2">Abilities</th>
               <td>
                 {pokemon.abilities.map((ability, key) => {
                   if (ability.is_hidden === true) {
@@ -120,7 +120,7 @@ const Pokemon = () => {
               </td>
             </tr>
             <tr>
-              <th>Base Exp.</th>
+              <th className="text-right pr-2">Base Exp.</th>
               <td>{pokemon.base_experience}</td>
             </tr>
           </tbody>

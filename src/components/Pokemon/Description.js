@@ -23,20 +23,24 @@ const Description = () => {
   return (
     <div className="w-full">
       <h1 className="font-bold text-2xl">Pokédex Entries</h1>
-      {description.map((text) => {
-        if (text.language.name === "en") {
-          return (
-            <div>
-              <p>
-                {text.version.name.replace(/(^\w|-\w)/g, (str) =>
-                  str.toUpperCase()
-                )}
-              </p>
-              <p>{text.flavor_text.replace('\f', ' ')}</p>
-            </div>
-          );
-        }
-      })}
+      <table>
+        <tbody>
+          {description.map((text) => {
+            if (text.language.name === "en") {
+              return (
+                <tr>
+                  <th className="font-normal">
+                    {text.version.name
+                      .replace(/(^\w|-\w)/g, (str) => str.toUpperCase())
+                      .replace("-", " ").replace("-", " ")}
+                  </th>
+                  <td>{text.flavor_text.replace("\f", " ").replace("-", " ")}</td>
+                </tr>
+              );
+            }
+          })}
+        </tbody>
+      </table>
     </div>
   );
 };

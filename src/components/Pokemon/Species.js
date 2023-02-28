@@ -22,7 +22,7 @@ const Species = () => {
 
   return (
     <tr>
-      <th>Species</th>
+      <th className="text-right pr-2">Species</th>
       {species.map((word) => {
         if (word.language.name === "en") {
           return <span key={word.genus}>{word.genus}</span>;
